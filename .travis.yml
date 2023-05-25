@@ -1,9 +1,12 @@
 sudo: required
+
 services:
   - docker
+
 language: generic
+
 before_install:
-  - docker build -t atharavjadhav/react-test -f Dockerfile.dev ./client
+  - docker build -t AtharavJadhav/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true atharavjadhav/react-test npm run test
